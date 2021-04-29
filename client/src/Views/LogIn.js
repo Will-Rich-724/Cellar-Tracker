@@ -12,7 +12,7 @@ const LogIn = (props) => {
         <div className="main-body">
             <Container>
                 <Row>
-                    <Col xs={6}>
+                    <Col xs={10}>
                         <div>
                             <SignIn />
                         </div>
