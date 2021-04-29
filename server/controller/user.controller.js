@@ -68,6 +68,14 @@ module.exports = {
             .then(results => res.json(results))
             .catch(err => res.json(err));
     },
+
+    getOneBottle(req, res) {
+        User.findById(req.params.user_id, function(err, user) {
+            if (err)
+                res.json(err);
+            res.json(user.bottles.id(req.params.bottle_id));
+        });
+    },
     
     createBottle (req, res) {
         User.updateOne({ _id: req.params.id}, {'$push': {bottles: { '$each': [req.body]}}}, {session: null})
