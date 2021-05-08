@@ -5,6 +5,7 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table'
 import DrinkBottle from '../Components/DrinkBottle';
 import LogOutButton from '../Components/LogOutButton';
+import AddBottle from '../Components/AddBottle';
 
 const UserPage = (props) => {
     const [firstName, setFirstName] = useState();
@@ -21,7 +22,9 @@ const UserPage = (props) => {
             .catch(err => console.log(err));
     }, [])
 
-    //add removeFromDom
+    const removeFromDom = (bottleId) => {
+
+    };
 
     return(
         <div className="main-body">
@@ -29,6 +32,7 @@ const UserPage = (props) => {
                 <h5>Welcome:</h5>
                 <h4>{firstName}</h4>
                 <LogOutButton />
+                <AddBottle userId={props.id}/>
             </div>
             <Table striped bordered hover>
                 <thead>
@@ -54,7 +58,7 @@ const UserPage = (props) => {
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>
                             <td>{bottle.country}</td>
-                            <td><DrinkBottle /></td>
+                            <td><DrinkBottle bottleId={bottle._id} userId={props.id} balance={account.balance} successCallback={() =>removeFromDom(account._id)} /></td>
                         </tr>
                     ))}
                 </tbody>

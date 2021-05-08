@@ -7,17 +7,28 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 const AddBottle = (props) => {
+    const {userId} = props;
     const [show, setShow] = useState(false);
-    const [wineName, setWineName] = useState()
-    const [proudcer, setProducer] = useState()
-    const [vintage, setVintage] = useState()
+    const [wineName, setWineName] = useState();
+    const [producer, setProducer] = useState();
+    const [vintage, setVintage] = useState();
+    const [country, setCountry] = useState();
 
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const AddBottle = () => {
-
+    const AddBottle = (e) => {
+        e.preventDefault();
+        axios.post(`http://localhost:8000/api/user/${userId}/account` , {
+            wineName,
+            producer,
+            country,
+            vintage
+        },{withCredentials: true})
+        .then(res => {console.log(res)
+        handleClose()})
+        .catch(err => console.log(err))
     };
 
     return (
@@ -50,7 +61,7 @@ const AddBottle = (props) => {
                         </Form.Group>
                         <Form.Group controlId="vintage">
                             <Form.Label>Vintage</Form.Label>
-                            <Form.Control type="string" placeholder="vintage" onChange={e => setvintage(e.target.value)} />
+                            <Form.Control type="string" placeholder="vintage" onChange={e => setVintage(e.target.value)} />
                             {errors.vintage ? <p>{errors.vintage.message}</p> : ""}
                         </Form.Group>
                         <Button variant="success" type="Submit">Add Bottle</Button>
