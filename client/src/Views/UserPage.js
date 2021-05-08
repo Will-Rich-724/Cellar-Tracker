@@ -5,6 +5,7 @@ import axios from 'axios';
 import Table from `react-bootstrap/Tabel`;
 
 import DrinkBottle from `../Components/DrinkBottle`;
+import LogOutButton from `../Components/LogOutButton`;
 
 const UserPage = (props) => {
     const [firstName, setFirstName] = useState();
@@ -25,6 +26,11 @@ const UserPage = (props) => {
 
     return(
         <div className="main-body">
+            <div>
+                <h5>Welcome:</h5>
+                <h4>{firstName}</h4>
+                <LogOutButton />
+            </div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
