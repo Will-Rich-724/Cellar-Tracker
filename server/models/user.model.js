@@ -5,11 +5,20 @@ const BottleSchema = new mongoose.Schema({
     wineName: {
         type: String,
     },
+    producer: {
+        type: String,
+    },
     country: {
         type: String,
     },
     vintage: {
-        type: Number
+        type: Number,
+    },
+    labelImage: {
+        type: String,
+    },
+    favorite: {
+        type: Boolean,
     }
 });
 

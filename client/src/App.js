@@ -5,7 +5,8 @@ import { Router, Link, navigate } from '@reach/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import LogIn from "./Views/LogIn";
-import Register from "./Views/Register"
+import Register from "./Views/Register";
+import UserPage from "./Views/UserPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <LogIn path='/' />
         <Register path='/register' />
+        <UserPage path='/:id' />
       </Router>
       <section>
         <div className="wave wave1"></div>
