@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Router, Link, navigate } from '@reach/router';
 import axios from 'axios';
 
-import Table from `react-bootstrap/Tabel`;
-
-import DrinkBottle from `../Components/DrinkBottle`;
-import LogOutButton from `../Components/LogOutButton`;
+import Table from 'react-bootstrap/Table'
+import DrinkBottle from '../Components/DrinkBottle';
+import LogOutButton from '../Components/LogOutButton';
 
 const UserPage = (props) => {
     const [firstName, setFirstName] = useState();

@@ -13,12 +13,6 @@ const BottleSchema = new mongoose.Schema({
     },
     vintage: {
         type: Number,
-    },
-    labelImage: {
-        type: String,
-    },
-    favorite: {
-        type: Boolean,
     }
 });
 
