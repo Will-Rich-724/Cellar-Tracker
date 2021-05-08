@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import Table from `react-bootstrap/Tabel`;
 
+import DrinkBottle from `../Components/DrinkBottle`;
+
 const UserPage = (props) => {
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
@@ -47,6 +49,7 @@ const UserPage = (props) => {
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>
                             <td>{bottle.country}</td>
+                            <td><DrinkBottle /></td>
                         </tr>
                     ))}
                 </tbody>
