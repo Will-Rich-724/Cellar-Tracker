@@ -20,7 +20,7 @@ const AddBottle = (props) => {
 
     const AddBottle = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:8000/api/user/${userId}/account` , {
+        axios.post(`http://localhost:8000/api/user/${userId}/bottle` , {
             wineName,
             producer,
             country,
@@ -33,11 +33,12 @@ const AddBottle = (props) => {
 
     return (
         <>
-            <Button onClick={handleShow}></Button>
-            <Modal>
+            <Button onClick={handleShow}>Add New Bottle</Button>
+            <Modal
                 show={show}
                 onHide={handleClose}
                 backdrop="static"
+                >
 
                 <Modal.Header closeButton>
                     <Modal.Title>Add New bottle</Modal.Title>
