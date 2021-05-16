@@ -20,10 +20,10 @@ const UserPage = (props) => {
                 setBottles(res.data.bottles);
             })
             .catch(err => console.log(err));
-    }, [])
+    }, [bottles])
 
-    const removeFromDom = (bottleId) => {
-
+    const removeFromDom = (bottleId) => { 
+        setBottles(bottles.filter(bottle => bottle._id != bottleId))
     };
 
     return(
