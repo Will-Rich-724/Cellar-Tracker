@@ -12,7 +12,7 @@ const SignUp = (props) => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
-    const [accounts, setAccounts] = useState([])
+    const [bottles, setBottles] = useState([])
 
     const register = e => {
         e.preventDefault();
@@ -24,7 +24,7 @@ const SignUp = (props) => {
                 email,
                 password,
                 confirmPassword,
-                accounts
+                bottles
             },
                 { withCredentials: true })
             .then(res => {

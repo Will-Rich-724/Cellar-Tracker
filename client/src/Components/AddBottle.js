@@ -37,7 +37,7 @@ const AddBottle = (props) => {
             <Modal>
                 show={show}
                 onHide={handleClose}
-                backdrop={static}
+                backdrop="static"
 
                 <Modal.Header closeButton>
                     <Modal.Title>Add New bottle</Modal.Title>
@@ -47,22 +47,22 @@ const AddBottle = (props) => {
                         <Form.Group controlId="wineName">
                             <Form.Label>Wine Name</Form.Label>
                             <Form.Control type="string" placeholder="Wine Name" onChange={e => setWineName(e.target.value)} />
-                            {errors.wineName ? <p>{errors.wineName.message}</p> : ""}
+                            {/* {errors.wineName ? <p>{errors.wineName.message}</p> : ""} */}
                         </Form.Group>
                         <Form.Group controlId="producer">
                             <Form.Label>Producer</Form.Label>
                             <Form.Control type="string" placeholder="Prodcer" onChange={e => setProducer(e.target.value)} />
-                            {errors.producer ? <p>{errors.producer.message}</p> : ""}
+                            {/* {errors.producer ? <p>{errors.producer.message}</p> : ""} */}
                         </Form.Group>
                         <Form.Group controlId="country">
                             <Form.Label>Country</Form.Label>
                             <Form.Control type="string" placeholder="Country" onChange={e => setCountry(e.target.value)} />
-                            {errors.country ? <p>{errors.country.message}</p> : ""}
+                            {/* {errors.country ? <p>{errors.country.message}</p> : ""} */}
                         </Form.Group>
                         <Form.Group controlId="vintage">
                             <Form.Label>Vintage</Form.Label>
                             <Form.Control type="string" placeholder="vintage" onChange={e => setVintage(e.target.value)} />
-                            {errors.vintage ? <p>{errors.vintage.message}</p> : ""}
+                            {/* {errors.vintage ? <p>{errors.vintage.message}</p> : ""} */}
                         </Form.Group>
                         <Button variant="success" type="Submit">Add Bottle</Button>
                     </Form>

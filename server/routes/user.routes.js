@@ -14,3 +14,5 @@ module.exports = app => {
     app.put("/api/user/:user_id/:bottle_id", userController.updateOneBottle);
     app.delete("/api/user/:user_id/:bottle_id", userController.deleteOneBottle);
 }
+
+//When working getAll and any account related routes should have authenticate added

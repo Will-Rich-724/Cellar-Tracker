@@ -58,7 +58,7 @@ const UserPage = (props) => {
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>
                             <td>{bottle.country}</td>
-                            <td><DrinkBottle bottleId={bottle._id} userId={props.id} balance={account.balance} successCallback={() =>removeFromDom(account._id)} /></td>
+                            <td><DrinkBottle bottleId={bottle._id} userId={props.id} successCallback={() =>removeFromDom(bottle._id)} /></td>
                         </tr>
                     ))}
                 </tbody>

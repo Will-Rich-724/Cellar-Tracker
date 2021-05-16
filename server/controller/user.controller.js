@@ -9,9 +9,11 @@ module.exports = {
         user
             .save()
             .then(() => {
-                res.jsomn({ msg: "Success!", user: user});
+                res.json({ msg: "Success!", user: user});
             })
-            .catch(err => res.status(400).json(err));
+            .catch((err) => {
+                console.log(err)
+                res.status(400).json(err)});
     },
 
     login(req, res) {
