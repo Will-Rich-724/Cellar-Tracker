@@ -13,6 +13,9 @@ const BottleSchema = new mongoose.Schema({
     },
     vintage: {
         type: Number,
+    },
+    favorite: {
+        type: Boolean,
     }
 });
 

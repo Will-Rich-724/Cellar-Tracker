@@ -90,8 +90,10 @@ module.exports = {
         {
             $set: {
                 'bottles.$.wineName' : req.body.wineName,
+                'bottles.$.producer' : req.body.producer,
                 'bottles.$.country' : req.body.country,
-                'bottles.$.vintage' : req.body.vintage
+                'bottles.$.vintage' : req.body.vintage,
+                'bottles.$.favorite' : req.body.favorite
             }
         }, {new:true, useFindAndModify: false})
         .then(newUser => {res.send(newUser.bottles)})

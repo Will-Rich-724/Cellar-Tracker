@@ -38,6 +38,9 @@ const UserPage = (props) => {
                 <thead>
                     <tr>
                         <th>
+                            Favorite
+                        </th>
+                        <th>
                             Name
                         </th>
                         <th>
@@ -54,6 +57,7 @@ const UserPage = (props) => {
                 <tbody>
                     {bottles.map((bottle, index) => (
                         <tr>
+                            <td>{bottle.favorite}</td>
                             <td>{bottle.wineName}</td>
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>

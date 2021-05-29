@@ -13,6 +13,7 @@ const AddBottle = (props) => {
     const [producer, setProducer] = useState();
     const [vintage, setVintage] = useState();
     const [country, setCountry] = useState();
+    const [favorite, setFavorite] = useState(false);
 
 
     const handleClose = () => setShow(false);
@@ -24,7 +25,8 @@ const AddBottle = (props) => {
             wineName,
             producer,
             country,
-            vintage
+            vintage,
+            favorite
         },{withCredentials: true})
         .then(res => {console.log(res)
         handleClose()})
