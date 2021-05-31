@@ -53,6 +53,9 @@ const UserPage = (props) => {
                         <th>
                             Country
                         </th>
+                        <th>
+                            Remove
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
