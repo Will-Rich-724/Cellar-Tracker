@@ -6,6 +6,7 @@ import Table from 'react-bootstrap/Table'
 import DrinkBottle from '../Components/DrinkBottle';
 import LogOutButton from '../Components/LogOutButton';
 import AddBottle from '../Components/AddBottle';
+import FavoriteBottle from '../Components/FavoriteBottle';
 
 const UserPage = (props) => {
     const [firstName, setFirstName] = useState();
@@ -38,6 +39,9 @@ const UserPage = (props) => {
                 <thead>
                     <tr>
                         <th>
+                            Favorite
+                        </th>
+                        <th>
                             Name
                         </th>
                         <th>
@@ -49,11 +53,15 @@ const UserPage = (props) => {
                         <th>
                             Country
                         </th>
+                        <th>
+                            Remove
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     {bottles.map((bottle, index) => (
                         <tr>
+                            <td><FavoriteBottle userId={props.id} bottleId={bottle._id} favoriteStatus={bottle.favorite} wineName={bottle.wineName} wineProd={bottle.producer} wineVin={bottle.vintage} wineCountry={bottle.country}/></td>
                             <td>{bottle.wineName}</td>
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>
