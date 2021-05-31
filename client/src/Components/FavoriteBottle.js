@@ -9,17 +9,20 @@ const FavoriteBottle = (props) => {
     const [favorite, setFavorite] = useState(favoriteStatus);
 
     const favoriteHandler = (e) => {
-        console.log(favoriteStatus)
-        {favoriteStatus ? setFavorite(false) : setFavorite(true)}
-        console.log(favoriteStatus)
+        console.log(`favorite: ${favorite}`)
+        {favorite ? setFavorite(false) : setFavorite(true)}
+        console.log(`favorite: ${favorite}`)
+
         axios.put(`http://localhost:8000/api/user/${userId}/${bottleId}`, {
             "wineName" : wineName,
             "producer" : wineProd,
             "country" : wineCountry,
             "vintage" : wineVin,
-            "favorite" : favoriteStatus
+            "favorite" : favorite
         }, {withCredentials: true})
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+        })
         .catch(err => console.log(err))
     }
 

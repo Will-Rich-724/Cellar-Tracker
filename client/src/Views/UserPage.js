@@ -58,7 +58,7 @@ const UserPage = (props) => {
                 <tbody>
                     {bottles.map((bottle, index) => (
                         <tr>
-                            <td><FavoriteBottle userId={props.id} bottleId={bottle.id} favoriteStatus={bottle.favorite} wineName={bottle.name} wineProd={bottle.producer} wineVin={bottle.vintage} wineCountry={bottle.country}/></td>
+                            <td><FavoriteBottle userId={props.id} bottleId={bottle._id} favoriteStatus={bottle.favorite} wineName={bottle.wineName} wineProd={bottle.producer} wineVin={bottle.vintage} wineCountry={bottle.country}/></td>
                             <td>{bottle.wineName}</td>
                             <td>{bottle.producer}</td>
                             <td>{bottle.vintage}</td>
