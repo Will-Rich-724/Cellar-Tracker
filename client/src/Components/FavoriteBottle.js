@@ -6,18 +6,25 @@ import Button from 'react-bootstrap/Button'
 
 const FavoriteBottle = (props) => {
     const {userId, bottleId, favoriteStatus, wineName, wineProd, wineVin, wineCountry} = props;
-    // Handler:
-    // First ternary based on current state of favorite
-    // Second Axios update bottle
-    const favoriteHandler = (e) => {
+    const [favorite, setFavorite] = useState(favoriteStatus);
 
+    const favoriteHandler = (e) => {
+        console.log(favoriteStatus)
+        {favoriteStatus ? setFavorite(false) : setFavorite(true)}
+        console.log(favoriteStatus)
+        axios.put(`http://localhost:8000/api/user/${userId}/${bottleId}`, {
+            "wineName" : wineName,
+            "producer" : wineProd,
+            "country" : wineCountry,
+            "vintage" : wineVin,
+            "favorite" : favoriteStatus
+        }, {withCredentials: true})
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
 
-    // Return:
-    // Button: onClick => Handler
-    // ternary based on current state of favorite
     return(
-        <Button variant="{favoriteHandler ? success : danger}" onClick={favoriteHandler}>Ternary Function</Button>
+        <Button variant={favoriteStatus ? "success" : "danger"} onClick={favoriteHandler}>{favoriteStatus ? <p>favorited</p> : <p>not favorited</p> }</Button>
     )
 };
 
